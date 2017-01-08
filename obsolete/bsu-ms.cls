@@ -134,10 +134,10 @@
 %%    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\typeout{Boise State University thesis class  16th December, 2014}
+\typeout{Boise State University thesis class  3rd March, 2010}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{bsu-ms}[2014/12/16 LaTeX class for Boise State University]
+\ProvidesClass{bsu-ms}[2010/03/03 LaTeX class for Boise State University]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -278,7 +278,7 @@
 %% Most of it comes from the existing "size12.clo" (in an earlier version
 %% it used that file outright) but I want this to be a standalone file,
 %% and be as independent as possible on future LaTeX releases.  I removed
-%% all the two-column stuff as well as the compatability stuff.
+%% all the two-column stuff as well as the compatibility stuff.
 %% The basic margin definitions get reset below.
 
 %% Note that \p@ is 1 point; \z@ is zero.
@@ -1178,7 +1178,6 @@
 %% \@masterstype is either "thesis" (default) or "project" if the
 %% "project" class option is given
 \gdef\@masterstype{\if@project{project}\else{thesis}\fi}
-\gdef\@Masterstype{\if@project{Project}\else{Thesis}\fi}
 \gdef\@docname{\if@project{PROJECT REPORT}\else{THESIS}\fi}
 
 %% The names of the front matter pages are pretty much fixed,
@@ -1253,9 +1252,7 @@
 
 \def\@maketitle{%
   \begin{titlepage}
-  	%remove leading empty page
-    %\null\newpage\setcounter{page}{1}  %% not that it really matters...
-    \null\setcounter{page}{1}  %% not that it really matters...
+    \null\newpage\setcounter{page}{1}  %% not that it really matters...
     %% To satisfy the annoying requirement that the date be one inch
     %% above the bottom of the page, I'm putting the date in the footer.
     \renewcommand{\thepage}{\@graduationMonth~\@graduationYear}%
@@ -1358,11 +1355,11 @@
  	\vspace{12pt} 
   \end{center}
   \singlespacing
-  \noindent {\@Masterstype} Title: {\@title}\\[12pt]
+  \noindent Thesis Title: {\@title}\\[12pt]
   \noindent Date of Final Oral Examination: {\@graduationDay} {\@graduationMonth} {\@graduationYear}\\[12pt]
-  \noindent The following individuals read and discussed the {\@masterstype}
-  submitted by student {\@author},  and they evaluated the presentation
-  and response to questions during the final oral examination. They found
+  \noindent The following individuals read and discussed the thesis
+  submitted by student {\@author},  and they evaluated her presentation
+  and response to questions during the final oral examination.  They found
   that the student passed the final oral examination.
 
   \label{CommitteeApproval}
@@ -1378,8 +1375,8 @@
   \end{flushleft}
 
   \begin{singlespace}
-  \noindent The final reading approval of the {\@masterstype} was granted by {\@advisor}, Chair of
-  the Supervisory Committee.  The {\@masterstype} was approved for the Graduate College
+  \noindent The final reading approval of the thesis was granted by {\@advisor},
+  {\@advisorTitle}.  The thesis was approved for the Graduate College
   by {\@graduateDean}, Ph.D., {\@graduateDeanTitle}.
   \end{singlespace}
 

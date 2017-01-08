@@ -48,7 +48,14 @@
 % The 'graphicx' package is quite extensive; the main purpose here is
 % the includion of PostScript graphics.  The 'dvips' option makes it work
 % better with 'dvips' (which is what is often used under Linux)
-\usepackage{graphicx}
+%\usepackage[dvips]{graphicx}
+% Comment the above line and uncomment below to use pdflatex
+\usepackage[pdftex]{graphicx}
+% Then the figures should be in pdf, jpg or png format.
+
+% The hyperref package provides support for hyperlinks inside/outside the document
+\usepackage{url}
+%\usepackage[colorlinks=true]{hyperref}
 
 % Others to consider
 
@@ -63,6 +70,13 @@
 %\usepackage{citesort}
 
 
+% Generate intra-document links and also allows url and href commands for
+% to generate embedded links in the document.
+% This breaks the build right now :-(
+%\usepackage{hyperref}
+%\hypersetup{
+%	colorlinks=true
+%}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,13 +103,13 @@
 \author{Foo Admirer}  
 
 % Day of oral defense
-\graduationDay{01}
+\graduationDay{1st}
 
 % Month of graduation (do not abbreviate)
-\graduationMonth{March}
+\graduationMonth{December}
 
 % Year of graduation
-\graduationYear{2010} 
+\graduationYear{2014} 
 
 % Advisor (chair) 
 % Use full name, with surname last, without any titles
@@ -132,7 +146,7 @@
 \college{Engineering}
 
 % Current department chair (at the moment, this is not used)
-\departmentChair{Murali Medidi}
+\departmentChair{Tim Andersen}
 
 % Current graduate dean
 \graduateDean{John R. Pelton}
@@ -212,6 +226,8 @@ Foo.
 
 % (End of preamble)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 % \begin{document} begins the document text, including front matter material
 
@@ -489,7 +505,7 @@ literal code.  Figure~\ref{fig:code} shows a sample Java program.
 %          figures and tables suddenly disappear, check the end of the
 %          document.  Adding more 'p' specifiers can help with this.
 
-\begin{figure}[htb]
+\begin{figure}
 \begin{vcode}  % an alternative to 'singlespace', that also shrinks the
                % typewriter font so that it blends better with the text
 \begin{verbatim}
@@ -569,12 +585,12 @@ HPF                        &3 hours   &1 1/2 weeks  &1 month\\ \hline
 \section{Figures}
 Check Figure~\ref{fig:W} for what happens when Foo gets compiled.
 
-\begin{figure}[ht]
+\begin{figure}[h]
 % Code in figures is normally not centered, but graphical figures are
 % (the \centering command works as well as the 'center' environment, 
 % because its scope is limited to the figure).
 \begin{center}
-\includegraphics*[width=4.0in,height=2.0in,keepaspectratio]{fig2.eps}
+\includegraphics*[width=4.0in,keepaspectratio]{figure}
 \end{center}
 \caption{How to Correct Errors in a Fuzzy Image}
 \label{fig:W}
@@ -620,7 +636,7 @@ N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
 \end{table}
 
 
-\begin{table}[htb]
+\begin{table}
 \caption{The Speedup of the PVM WRS Code and the HPF WRS Code}
 \label{tbl:SPWC}
 \centerline{
@@ -721,6 +737,8 @@ Projects.} Fourth edition, August 2001.
 \chapter{Timing Measurements}\label{app:Timing}
 
 Here is Appendix A. See Appendix~\ref{app:Setup} for the experimental setup.
+
+% Test a figure in it to see if it works right
 
 
 \chapter{Experimental Setup}\label{app:Setup}
