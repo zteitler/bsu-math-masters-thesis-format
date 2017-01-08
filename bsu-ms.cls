@@ -235,24 +235,6 @@
 %}
 
 
-%% The "Amit" option provides some particular formatting specifications,
-%% e.g., "Chapter" instead of "CHAPTER", that Amit prefers.
-
-\newif\if@Amit
-\@Amitfalse
-\DeclareOption{Amit}{%
-  \@Amittrue%
-}
-
-
-%% The "Mike" option provides some particular formatting specifications,
-%% and includes some packages, that Mike prefers.
-
-\newif\if@Mike
-\@Mikefalse
-\DeclareOption{Mike}{%
-  \@Miketrue%
-}
 
 %% Even though 'twocolumn' is not supported here, I left most of the code
 %% for it in for easy reference to where this differs from 'report.cls'
@@ -1198,11 +1180,7 @@
 %% the name directly, it's better to define a macro to change the name,
 %% to preserve consistent capitalizations
 
-\if@Amit
-  \newcommand{\bibliographyName}[1]{\renewcommand{\bibname}{#1}}
-\else
-  \newcommand{\bibliographyName}[1]{\renewcommand{\bibname}{\uppercase{#1}}}
-\fi
+\newcommand{\bibliographyName}[1]{\renewcommand{\bibname}{\uppercase{#1}}}
 
 %% The name \copyright is already used (for the copyright symbol);
 %% this \includeCopyright macro instructs the \frontmatter command to include 
@@ -1628,21 +1606,6 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Specific Styles
-
-\if@Amit
-  %% Amit doesn't like title headings in all capitals
-  \renewcommand{\chaptername}{Chapter}    %% rather than CHAPTER
-  \renewcommand{\appendixname}{Appendix}  %% rather than APPENDIX
-\fi
-
-\if@Mike
-  %% I can't stand the look of the Computer Modern fonts
-  \usepackage{mathptmx}
-  \usepackage[scaled=0.92]{helvet}
-\fi
 
 
 
